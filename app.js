@@ -18,9 +18,6 @@ const app = express();
 // Middleware
 app.use(bodyParser.json()); // Parses incoming JSON requests
 
-<<<<<<< HEAD
-// Error Handling Middleware - Correct Placement
-=======
 // Error Handling Middleware
 app.use(errorHandler);
 
@@ -37,7 +34,6 @@ app.use(session({
   cookie: { secure: false } // Set to true in production with HTTPS
 }));
 
->>>>>>> 4f2206d (updated 2fa and hash)
 app.use(express.json()); // Parses incoming JSON requests
 app.use(cookieParser()); // Enable cookie parsing
 app.use(express.urlencoded({ extended: true }));
@@ -48,13 +44,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Import and use routes
 app.use('/api/users', userRoutes);
-<<<<<<< HEAD
 app.use("/api", userRoutes);  // This line seems redundant with the previous one
 app.use('/api/tasks', taskRoutes); // Use task routes for the '/api/tasks' endpoint
-=======
 app.use("/api", userRoutes);
 app.use("/user", userRoutes);
->>>>>>> 4f2206d (updated 2fa and hash)
 
 
 
