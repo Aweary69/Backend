@@ -308,14 +308,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // Logout (No changes, kept for completeness)
-function logout() {
-    fetch("/api/auth/logout", { method: "POST", credentials: "include" })
-        .then(response => response.json())
-        .then(data => {
-            window.location.href = data.redirect; // Redirect to login
-        })
-        .catch(error => console.error("Logout failed:", error));
-}});
+});
 
 if (window.location.pathname.endsWith(".html")) {
     window.history.replaceState(null, "", window.location.pathname.replace(".html", ""));
